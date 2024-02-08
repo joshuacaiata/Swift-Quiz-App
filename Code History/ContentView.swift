@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     let mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
-    let accentColor = Color(red: 48/255, green: 105/255, blue: 240/255)
+    
+    let question = Question(
+        questionText: "What was the first computer bug?",
+        possibleAnswers: ["Ant", "Beetle", "Moth", "Fly"],
+        correctAnswerIndex: 2
+    )
+    
     var body: some View {
         ZStack {
             mainColor.ignoresSafeArea()
@@ -24,7 +30,7 @@ struct ContentView: View {
                 
                 
                 VStack {
-                    Text("What was the first computer bug?")
+                    Text(question.questionText)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
@@ -43,61 +49,27 @@ struct ContentView: View {
                     Button(action: {
                         print("Tapped on choice 1")
                     }, label: {
-                        Text("Ant")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .padding(.all, 15.0)
-                            .foregroundColor(mainColor)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .cornerRadius(7.0)
-                            .padding(.horizontal, 30)
+                        ChoiceTextView(choiceText: question.possibleAnswers[0])
                     })
-                    
                     
                     Button(action: {
                         print("Tapped on choice 2")
                     }, label: {
-                        Text("Beetle")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .padding(.all, 15.0)
-                            .foregroundColor(mainColor)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .cornerRadius(7.0)
-                            .padding(.horizontal, 30)
+                        ChoiceTextView(choiceText: question.possibleAnswers[1])
                     })
-                    
                     
                     Button(action: {
                         print("Tapped on choice 3")
                     }, label: {
-                        Text("Moth")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .padding(.all, 15.0)
-                            .foregroundColor(mainColor)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .cornerRadius(7.0)
-                            .padding(.horizontal, 30)
+                        ChoiceTextView(choiceText: question.possibleAnswers[2])
                     })
-                    
                     
                     Button(action: {
                         print("Tapped on choice 4")
                     }, label: {
-                        Text("Fly")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .padding(.all, 15.0)
-                            .foregroundColor(mainColor)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .cornerRadius(7.0)
-                            .padding(.horizontal, 30)
+                        ChoiceTextView(choiceText: question.possibleAnswers[3])
                     })
+                    
                     
                 }
                 .padding(.bottom, 100)
