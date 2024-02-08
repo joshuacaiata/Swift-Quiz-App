@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
+    @State var mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
     
     let question = Question(
         questionText: "What was the first computer bug?",
@@ -46,31 +46,15 @@ struct ContentView: View {
                 Spacer()
                 
                 VStack {
-                    Button(action: {
-                        print("Tapped on choice 1")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[0])
-                    })
                     
-                    Button(action: {
-                        print("Tapped on choice 2")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[1])
-                    })
-                    
-                    Button(action: {
-                        print("Tapped on choice 3")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[2])
-                    })
-                    
-                    Button(action: {
-                        print("Tapped on choice 4")
-                    }, label: {
-                        ChoiceTextView(choiceText: question.possibleAnswers[3])
-                    })
-                    
-                    
+                    ForEach(question.possibleAnswers.indices, id: \.self) { answerIndex in
+                        Button(action: {
+                            print("Tapped on option with text: \(question.possibleAnswers[answerIndex])")
+                            mainColor = answerIndex == question.correctAnswerIndex ? .green : .red
+                        }, label: {
+                            ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
+                        })
+                    }
                 }
                 .padding(.bottom, 100)
             }
