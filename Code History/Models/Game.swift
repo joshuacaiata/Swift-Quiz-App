@@ -26,10 +26,10 @@ struct Game {
     }
     
     mutating func updateGameStatus() -> Void {
-        self.currentQuestionIndex += 1
-        
-        if self.currentQuestionIndex >= self.questions.count {
-            self.isOver = true
+        if currentQuestionIndex < questions.count - 1 {
+            currentQuestionIndex += 1
+        } else {
+            isOver = true
         }
     }
     

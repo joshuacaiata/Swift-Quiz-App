@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Foundation
+
 
 struct GameColor {
     static let main = Color(red: 20/255, green: 28/255, blue: 58/255)
