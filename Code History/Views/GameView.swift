@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @State var mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
+struct GameView: View {
+    @State var mainColor = GameColor.main
     
     let question = Question(
         questionText: "What was the first computer bug?",
@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
                 .background(Color.white)
                 .cornerRadius(7.0)
-                .foregroundColor(mainColor)
+                .foregroundColor(GameColor.main)
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 30)
                 
@@ -64,5 +64,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    GameView()
 }
