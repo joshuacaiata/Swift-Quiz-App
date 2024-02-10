@@ -29,7 +29,7 @@ struct WelcomeView: View {
                         destination: GameView(),
                         label: {
                             HStack {
-                                LetsGoButton(str: "Alright, let's go!")
+                                ContinueButton(str: "Alright, let's go!")
                             }
                         }
                     )

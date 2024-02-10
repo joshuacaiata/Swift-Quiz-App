@@ -58,10 +58,10 @@ struct QuestionView: View {
                     viewModel.displayNextScreen()
                 })
                 {
-                    LetsGoButton(str: "Next Question")
+                    ContinueButton(str: "Next Question")
                 }
             } else {
-                LetsGoButton(str: "Next Question")
+                ContinueButton(str: "Next Question")
                     .opacity(0)
             }
              

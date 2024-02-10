@@ -10,11 +10,7 @@ import SwiftUI
 struct GameView: View {
     @StateObject var viewModel = GameViewModel()
     
-    let question = Question(
-        questionText: "What was the first computer bug?",
-        possibleAnswers: ["Ant", "Beetle", "Moth", "Fly"],
-        correctAnswerIndex: 2
-    )
+    
     
     var body: some View {
         ZStack {
@@ -34,6 +30,13 @@ struct GameView: View {
         .foregroundColor(.white)
         .navigationBarHidden(true)
         .environmentObject(viewModel)
+        .fullScreenCover(isPresented: Binding<Bool>(
+                    get: { viewModel.gameIsOver },
+                    set: { _ in }
+                )) {
+                    // The Game Over screen content goes here
+                    Text("Game Over!")
+                }
     }
 }
 
