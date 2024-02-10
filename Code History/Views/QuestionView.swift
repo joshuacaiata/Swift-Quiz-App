@@ -49,6 +49,9 @@ struct QuestionView: View {
             }
             
             Spacer()
+                .frame(height: 100)
+            
+            
             
             if viewModel.guessWasMade {
                 Button(action: {
@@ -58,16 +61,16 @@ struct QuestionView: View {
                     LetsGoButton(str: "Next Question")
                 }
             } else {
-                    HStack {
-                        Spacer()
-                            .padding()
-                            .padding(.top, 20)
-                    }
+                LetsGoButton(str: "Next Question")
+                    .opacity(0)
             }
+             
             
         }
     }
 }
+
+
 
 
  #Preview {

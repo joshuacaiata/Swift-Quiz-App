@@ -27,7 +27,7 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func makeGuess(atIndex index: Int) {
+    func makeGuess(atIndex index: Int) -> Void {
         game.makeGuessForCurrentQuestion(atIndex: index)
     }
     
