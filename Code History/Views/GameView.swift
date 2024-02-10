@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @State var mainColor = GameColor.main
+    @StateObject var viewModel = GameViewModel()
     
     let question = Question(
         questionText: "What was the first computer bug?",
@@ -18,48 +18,22 @@ struct GameView: View {
     
     var body: some View {
         ZStack {
-            mainColor.ignoresSafeArea()
+            GameColor.main.ignoresSafeArea()
             
             VStack() {
-                Text("1 / 10")
+                Text(viewModel.questionProgressText)
                     .font(.callout)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .padding(.top, 50)
                     .padding(.bottom, 30)
                 
-                
-                VStack {
-                    Text(question.questionText)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: .infinity)
-                        .padding(.all, 20.0)
-                }
-                .background(Color.white)
-                .cornerRadius(7.0)
-                .foregroundColor(GameColor.main)
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 30)
-                
-                Spacer()
-                
-                VStack {
-                    
-                    ForEach(question.possibleAnswers.indices, id: \.self) { answerIndex in
-                        Button(action: {
-                            print("Tapped on option with text: \(question.possibleAnswers[answerIndex])")
-                            mainColor = answerIndex == question.correctAnswerIndex ? .green : .red
-                        }, label: {
-                            ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
-                        })
-                    }
-                }
-                .padding(.bottom, 100)
+                QuestionView(question:viewModel.currentQuestion)
             }
         }
         .foregroundColor(.white)
+        .navigationBarHidden(true)
+        .environmentObject(viewModel)
     }
 }
 

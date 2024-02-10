@@ -13,14 +13,14 @@ struct WelcomeView: View {
             ZStack {
                 GameColor.main.ignoresSafeArea()
                 VStack {
-                    Spacer()
                     
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Select the correct answers to the following questions.")
                             .font(.largeTitle)
                             .bold()
                             .multilineTextAlignment(.leading)
-                            .padding()
+                            .padding(.all, 20.0)
+                            .padding(.top, 80.0)
                     }
                     
                     Spacer()
@@ -29,9 +29,8 @@ struct WelcomeView: View {
                         destination: GameView(),
                         label: {
                             HStack {
-                                BottomTextView(str: "Alright, let's go!")
+                                LetsGoButton(str: "Alright, let's go!")
                             }
-                            .background(GameColor.accent)
                         }
                     )
                 }
