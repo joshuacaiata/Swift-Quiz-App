@@ -5,6 +5,7 @@
 //  Created by Joshua Caiata on 2/9/24.
 //
 
+import SwiftUI
 import Foundation
 
 class GameViewModel: ObservableObject {
@@ -32,5 +33,19 @@ class GameViewModel: ObservableObject {
     
     func displayNextScreen() -> Void {
         game.updateGameStatus()
+    }
+    
+    func color(forOptionIndex optionIndex: Int) -> Color {
+        if let guessedIndex = game.guesses[currentQuestion] {
+            if guessedIndex != optionIndex {
+                return GameColor.buttonMain
+            } else if guessedIndex == currentQuestion.correctAnswerIndex {
+                return GameColor.correctGuess
+            } else {
+                return GameColor.incorrectGuess
+            }
+        } else {
+            return GameColor.buttonMain
+        }
     }
 }

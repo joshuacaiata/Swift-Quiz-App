@@ -40,6 +40,9 @@ struct QuestionView: View {
                     })
                     {
                         ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
+                            .background(viewModel.color(forOptionIndex: answerIndex))
+                            .cornerRadius(7.0)
+                            .padding(.horizontal, 30)
                     }
                     
                 }
@@ -54,6 +57,12 @@ struct QuestionView: View {
                 {
                     LetsGoButton(str: "Next Question")
                 }
+            } else {
+                    HStack {
+                        Spacer()
+                            .padding()
+                            .padding(.top, 20)
+                    }
             }
             
         }

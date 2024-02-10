@@ -18,9 +18,7 @@ struct ChoiceTextView: View {
             .padding(.all, 15.0)
             .foregroundColor(GameColor.main)
             .frame(maxWidth: .infinity)
-            .background(Color.white)
-            .cornerRadius(7.0)
-            .padding(.horizontal, 30)
+            
     }
 }
 
