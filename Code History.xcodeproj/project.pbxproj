@@ -20,6 +20,7 @@
 		86640D1A2B71AB21007413D2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86640D192B71AB21007413D2 /* GameView.swift */; };
 		86640D1C2B71AB22007413D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86640D1B2B71AB22007413D2 /* Assets.xcassets */; };
 		86640D1F2B71AB22007413D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86640D1E2B71AB22007413D2 /* Preview Assets.xcassets */; };
+		86EE8EEC2B7AE70A0079EA90 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EE8EEB2B7AE70A0079EA90 /* ScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		86640D192B71AB21007413D2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		86640D1B2B71AB22007413D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86640D1E2B71AB22007413D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		86EE8EEB2B7AE70A0079EA90 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				861A0F5B2B76D7880089CF93 /* GameViewModel.swift */,
+				86EE8EEB2B7AE70A0079EA90 /* ScoreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				86119AB32B783988000F2820 /* ContinueButton.swift in Sources */,
 				861A0F5E2B76DD730089CF93 /* QuestionView.swift in Sources */,
 				861A0F5C2B76D7880089CF93 /* GameViewModel.swift in Sources */,
+				86EE8EEC2B7AE70A0079EA90 /* ScoreViewModel.swift in Sources */,
 				8655758E2B7460DF00993D82 /* Question.swift in Sources */,
 				860944672B75C1B400B584A7 /* WelcomeView.swift in Sources */,
 				860944622B75A50A00B584A7 /* Game.swift in Sources */,

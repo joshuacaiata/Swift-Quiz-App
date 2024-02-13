@@ -31,6 +31,14 @@ class GameViewModel: ObservableObject {
         game.isOver
     }
     
+    var correctGuesses: Int {
+        game.guessCount.correct
+    }
+    
+    var incorrectGuesses: Int {
+        game.guessCount.incorrect
+    }
+    
     func makeGuess(atIndex index: Int) -> Void {
         game.makeGuessForCurrentQuestion(atIndex: index)
     }
@@ -52,4 +60,5 @@ class GameViewModel: ObservableObject {
             return GameColor.buttonMain
         }
     }
+    
 }

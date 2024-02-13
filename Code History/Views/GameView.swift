@@ -35,7 +35,7 @@ struct GameView: View {
                     set: { _ in }
                 )) {
                     // The Game Over screen content goes here
-                    Text("Game Over!")
+                    ScoreView(viewModel: ScoreViewModel(correctGuesses: viewModel.correctGuesses, incorrectGuesses: viewModel.incorrectGuesses))
                 }
     }
 }
