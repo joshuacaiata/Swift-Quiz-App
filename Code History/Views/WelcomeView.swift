@@ -29,7 +29,7 @@ struct WelcomeView: View {
                         destination: GameView(),
                         label: {
                             HStack {
-                                LetsGoButton(str: "Alright, let's go!")
+                                ContinueButton(str: "Alright, let's go!")
                             }
                         }
                     )
@@ -37,6 +37,9 @@ struct WelcomeView: View {
                 .foregroundColor(.white)
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 

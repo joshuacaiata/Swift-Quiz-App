@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LetsGoButton: View {
+struct ContinueButton: View {
     let str: String
     
     var body: some View {
@@ -26,5 +26,5 @@ struct LetsGoButton: View {
 }
 
 #Preview {
-    LetsGoButton(str: "Test")
+    ContinueButton(str: "Test")
 }
